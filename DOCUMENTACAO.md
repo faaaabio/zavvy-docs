@@ -1,6 +1,7 @@
-# Documentação do Site — Zavvy
+# Documentação — Zavvy
 
-> URL: https://zavvy.com.br
+> Site: https://zavvy.com.br
+> App: https://app.zavvy.com.br
 > Data da captura: 2026-03-11
 > Capturas de tela: pasta `screenshots/`
 
@@ -218,7 +219,7 @@ screenshots/
 
 ---
 
-## Notas Técnicas
+## Notas Técnicas (Site)
 
 - Site construído como **landing page de uma única página** (`/`) com seções acessadas via âncoras
 - App separado em subdomínio: `app.zavvy.com.br`
@@ -226,3 +227,222 @@ screenshots/
 - Integração com Google Calendar e Google Meet
 - Conformidade com LGPD mencionada explicitamente
 - PWA (Progressive Web App) para acesso mobile
+
+---
+
+---
+
+# Documentação do App — `app.zavvy.com.br`
+
+> Explorado em sessão autenticada em 2026-03-11
+> Screenshots: `screenshots/app/`
+
+## Visão Geral do App
+
+Aplicação web (PWA) acessível via `app.zavvy.com.br`. Interface com sidebar fixa de navegação à esquerda.
+
+**Usuário de teste:** Fabio da Silva Lino (`fabiosl@gmail.com`) — Plano **Starter** (em período de teste)
+**Link de agendamento público:** `booking.zavvy.com.br/ofabio`
+
+---
+
+## Estrutura de Navegação (Sidebar)
+
+| Item | Rota | Descrição |
+|------|------|-----------|
+| Home | `/dashboard` | Dashboard com resumo da semana |
+| Agenda | `/agenda` | Calendário de agendamentos |
+| Clientes | `/clients` | Lista e perfil de clientes |
+| Configurações | `/settings` | Configurações gerais da conta |
+| + Novo Agendamento | — | Botão de ação principal (verde) |
+| Compartilhar Link | — | Atalho para link/QR Code |
+
+---
+
+## Tela: Dashboard (`/dashboard`)
+
+**Screenshot:** `screenshots/app/dashboard/01-home.png`
+
+### Elementos presentes:
+- **Alerta de pendentes:** Banner amarelo indicando agendamentos sem confirmação do dia
+- **Seção "Próximos":** Lista de próximos agendamentos (ou CTA para compartilhar link se vazia)
+- **Link de agendamento:** `booking.zavvy.com.br/ofabio` com botões "Copiar link" e "QR Code"
+- **Resumo semanal** (cards):
+  - Agendados (com breakdown: confirmados / pendentes)
+  - Concluídos
+  - Cancelados
+  - Não compareceram
+- **Resumo semanal em gráfico:** Período exibido no rodapé (ex: "9 de mar. – 15 de mar.")
+
+---
+
+## Tela: Agenda (`/agenda`)
+
+**Screenshot:** `screenshots/app/agenda/`
+
+### Views disponíveis:
+| View | Descrição |
+|------|-----------|
+| Dia | Visão horária de um único dia |
+| Semana | Visão semanal (padrão) — colunas SEG a DOM |
+| Lista | Listagem cronológica de agendamentos |
+
+### Navegação:
+- Setas `<` `>` para semana anterior/próxima
+- Data atual destacada em verde
+
+### Card de agendamento (na grade):
+- Horário + nome do cliente + nome do serviço
+- Cor: verde para confirmados, amarelo para pendentes
+
+### Modal "Detalhes do agendamento":
+Aberto ao clicar em um agendamento. Contém:
+
+| Campo | Detalhe |
+|-------|---------|
+| Status badge | Pendente / Confirmado / Concluído / Cancelado |
+| Data e hora | Ex: Quarta-feira, 11 Março 2026, 10:00 – 11:00 (1h) |
+| Cliente | Nome + telefone + botão WhatsApp |
+| Serviço | Nome + duração + valor ("A combinar" se sem preço fixo) |
+| Ações | Concluir · Remarcar horário · Não compareceu · Cancelar |
+
+---
+
+## Tela: Clientes (`/clients`)
+
+**Screenshot:** `screenshots/app/clientes/`
+
+### Lista de clientes:
+- **Busca** por nome
+- **Filtros:** Todos · Agendados · Inativos · Ordenar (Mais recente)
+- **Cards de resumo:** Total · Agendados · Atendimentos (total histórico)
+- **Colunas da tabela:** Cliente · Telefone · Último Atendimento · Próximo · Atendimentos · (ícone WhatsApp)
+
+### Perfil do cliente (`/clients/:id`):
+
+**Informações básicas:**
+- Avatar com iniciais + Nome + Telefone
+- Contador: `N visitas` · `N agendados`
+- Ações rápidas: **WhatsApp** · **Ligar** · **Agendar**
+- Ícone de editar perfil (canto superior direito)
+
+**Abas do perfil:**
+
+#### Aba: Histórico
+- **PRÓXIMOS:** agendamentos futuros com status badge, serviço, ações (Concluir / Cancelar)
+- **ANTERIORES:** agendamentos passados com status (Concluído, Cancelado, etc.)
+
+#### Aba: Mensagens
+- Conversa de WhatsApp trocada com o cliente via Zavvy
+
+#### Aba: Anotações
+- **Anotações Privadas** — campo livre, visível apenas para o profissional
+- Cliente não tem acesso a essas informações
+- Botão `+` para criar nova anotação
+- Estado vazio: "Nenhuma anotação ainda" + CTA "Criar primeira anotação"
+
+### Gaps identificados (vs. clínica):
+> O perfil atual armazena apenas nome, telefone e anotações livres.
+> Não há campos estruturados para dados clínicos (anamnese, diagnóstico, convênio, data de nascimento).
+
+---
+
+## Tela: Configurações (`/settings`)
+
+**Screenshot:** `screenshots/app/configuracoes/`
+
+### Seção: Perfil do usuário
+- Avatar + Nome + Profissão (ex: "Designer de produto") + Status (badge "Teste")
+- Clicável → editar perfil
+
+### Seção: MEU NEGÓCIO
+| Item | Descrição |
+|------|-----------|
+| Serviços e preços | Gerencie seu catálogo de serviços |
+| Horários de funcionamento | Defina sua disponibilidade por dia/hora |
+
+### Seção: NOTIFICAÇÕES E LEMBRETES
+| Notificação | Toggle | Observação |
+|-------------|--------|------------|
+| Notificações push | ✅ Ativo | Alertas no app |
+| WhatsApp para clientes | ✅ Ativo | Confirmação + lembrete 24h antes — ~2 mensagens/agendamento a R$0,25/msg |
+| Notificações por email | ✅ Ativo | Novos agendamentos e cancelamentos |
+
+### Seção: INTEGRAÇÕES
+| Integração | Status | Ação |
+|------------|--------|------|
+| WhatsApp | ✅ Conectado (+55 11 97777-7030) | Alterar |
+| Google Calendar | — | Sincronize sua agenda |
+| Link de agendamento | `booking.zavvy.com.br/ofabio` | Copiar |
+| QR Code | — | Compartilhe visualmente |
+
+### Seção: CONTA
+| Item | Descrição |
+|------|-----------|
+| Assinatura | Plano Starter — clica para gerenciar |
+| Perfil | Nome, foto e link de agendamento |
+| Excluir conta | Apagar permanentemente |
+| Sair da conta | Logout |
+
+---
+
+## Estado Atual do Produto
+
+| Aspecto | Situação |
+|---------|----------|
+| Fase | Lançamento — poucos cadastros iniciais |
+| Aquisição | Testando anúncios pagos; alguns usuários orgânicos via Google |
+| Plano ativo | Starter (período de teste) |
+| Clientes no app | 1 cliente cadastrado (Matheus) |
+| Agendamentos | 2 no total (1 concluído, 1 pendente) |
+
+---
+
+## Funcionalidades Ausentes (Roadmap identificado)
+
+### Prioridade Alta — Pequenas Clínicas
+
+| Feature | Situação atual | O que precisaria |
+|---------|----------------|-----------------|
+| **Agenda recorrente** | Cada agendamento é avulso | Repetir sessão semanalmente por N semanas, com confirmação automática em cada |
+| **Ficha clínica do paciente** | Apenas anotação livre + histórico de agendamentos | Campos estruturados: data de nascimento, anamnese, diagnóstico, convênio |
+| **Multi-profissional** | 1 conta = 1 profissional | Múltiplos profissionais sob o mesmo negócio, cada um com sua agenda |
+| **Pacote de sessões** | Não existe | Ex: "Pacote de 10 sessões" com controle de créditos restantes |
+| **Prontuário por sessão** | Não existe | Anotação vinculada a um atendimento específico (evolução clínica) |
+
+---
+
+## Estrutura de Arquivos (Screenshots — App)
+
+```
+screenshots/
+├── home/                              # Landing page (zavvy.com.br)
+│   ├── 01-hero.png
+│   ├── 02-whatsapp-demo.png
+│   ├── 03-como-funciona.png
+│   ├── 04-funcionalidades.png
+│   ├── 05-preco.png
+│   ├── 06-faq.png
+│   └── 07-footer.png
+├── termos-de-uso/
+│   └── full-page.png
+├── politica-de-privacidade/
+│   └── full-page.png
+└── app/                               # App logado (app.zavvy.com.br)
+    ├── dashboard/
+    │   └── 01-home.png
+    ├── agenda/
+    │   ├── 01-semana.png
+    │   ├── 02-detalhe-agendamento.png
+    │   └── 03-lista.png
+    ├── clientes/
+    │   ├── 01-lista.png
+    │   ├── 02-perfil-historico.png
+    │   ├── 03-perfil-mensagens.png
+    │   └── 04-perfil-anotacoes.png
+    └── configuracoes/
+        ├── 01-geral.png
+        └── 02-integracoes.png
+```
+
+> ⚠️ Screenshots do app (`screenshots/app/`) serão capturados quando a extensão Chrome reconectar.
