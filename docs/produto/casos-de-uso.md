@@ -2,8 +2,13 @@
 
 | # | Ator | Situação do dia a dia | Como o Zavvy resolve |
 |---|------|----------------------|----------------------|
-| 1 | Profissional | Perde tempo respondendo mensagens para confirmar horários | Configura disponibilidade uma vez e o cliente agenda sozinho pelo link |
-| 2 | Cliente | Tem que ligar ou mandar mensagem e esperar confirmação | Acessa o link e agenda na hora, sem criar conta |
-| 3 | Profissional | Não sabe o que tem no dia sem consultar várias conversas | Visualiza e gerencia toda a agenda em um único lugar |
-| 4 | Cliente | Esquece o horário agendado e não aparece | Recebe confirmação e lembrete automático via WhatsApp |
-| 5 | Proprietário | Gerenciar agenda de vários profissionais gera conflitos | Separa agendas por profissional sob um único negócio |
+| 1 | Profissional de Beleza | Recebe pedidos de agendamento por Instagram e WhatsApp ao mesmo tempo, não consegue responder todos | Compartilha o **link de agendamento** nas redes; cliente agenda sozinho e recebe **confirmação automatica via WhatsApp** |
+| 2 | Profissional de Beleza | Cliente falta sem avisar, gerando buracos na agenda e perda de receita | **Lembrete automatico 24h antes** reduz faltas; cliente pode cancelar ou reagendar pelo WhatsApp |
+| 3 | Personal Trainer | Aluno quer marcar treino fora do horario comercial e nao consegue contato | **Link de agendamento** disponivel 24h; aluno escolhe horario e recebe **confirmação automatica** |
+| 4 | Personal Trainer | Gerencia agenda de 20+ alunos por mensagem e perde controle dos horarios | **Agenda** centralizada com visualizacao por dia/semana; **gestao de clientes** com historico de cada aluno |
+| 5 | Profissional de Saude | Paciente esquece consulta marcada por telefone e nao comparece | **Confirmação e lembrete automaticos** via WhatsApp reduzem no-show em ate 29% |
+| 6 | Profissional de Saude | Clinica com multiplos profissionais precisa organizar agendas separadas | Funcionalidade de **equipe** permite multiplos profissionais sob o mesmo negocio com agendas independentes |
+| 7 | Dono de Pet Shop | Clientes ligam para agendar banho e tosa, linha sempre ocupada | **QR code** na recepcao e **link** nas redes sociais permitem agendamento autonomo pelo cliente |
+| 8 | Professor / Consultor | Aluno pergunta sobre disponibilidade fora do expediente | **Assistente IA** responde automaticamente pelo WhatsApp com horarios disponiveis |
+| 9 | Cliente Final | Quer agendar corte de cabelo as 23h pelo celular | Acessa o **link do profissional**, escolhe servico e horario, recebe **confirmação instantanea** no WhatsApp |
+| 10 | Cliente Final | Precisa cancelar compromisso de ultima hora | Recebe **lembrete 24h antes** com opcao de cancelar ou reagendar pelo WhatsApp |

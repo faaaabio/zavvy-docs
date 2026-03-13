@@ -1,0 +1,37 @@
+# Mercado
+
+## Setores Lideres
+
+| Setor | Dado Principal | Plataforma | Fonte |
+|-------|----------------|------------|-------|
+| Saude | 88M consultas online | Doctoralia | [viva.com](https://viva.com.br/saude-e-bem-estar/mais-de-88-milhoes-de-consultas-medicas-foram-agendadas-online-em-2025.html) |
+| Beleza | 68% preferencia online | Frizzar/Trinks | [clientepreferido.com](https://clientepreferido.com.br/blog/marketing-digital-salao-beleza-guia-completo) |
+| Hospitalidade | 21,71% do mercado | Reservio | [fortunebusinessinsights.com](https://www.fortunebusinessinsights.com/pt/appointment-scheduling-software-market-108614) |
+| Fitness | >60% mobile | Appointy | [reservio.com](https://www.reservio.com/pt-br/blog/dicas-de-negocios/ultimas-tendencias-do-agendamento-online) |
+
+## Estatisticas e Dados Relevantes
+* **Brasil Conectado:** **152 milhoes** de pessoas com acesso a internet (**81% da populacao**), sendo que **99%** utilizam dispositivos moveis para navegar. [agenciabrasil.ebc.com](https://agenciabrasil.ebc.com.br/geral/noticia/2021-08/brasil-tem-152-milhoes-de-pessoas-com-acesso-internet) | [mobiletime.com](https://www.mobiletime.com.br/noticias/18/08/2021/tic-domicilios-2020-81-da-populacao-brasileira-tem-acesso-a-internet/)
+* **Consumo de Video:** **91% dos consumidores** desejam ver mais conteudos em video das marcas. [agenciamestre.com](https://www.agenciamestre.com/marketing-digital/tendencias-de-consumo-de-video/)
+* **Fidelizacao:** **80% dos consumidores** sao mais propensos a comprar de marcas que oferecem experiencias personalizadas baseadas em seu historico. [cdlnatal.com](https://www.cdlnatal.com.br/noticias/956/80--dos-consumidores-tem-mais-chances-de-comprar-de-marcas-que-oferecem-experiencias-personalizadas)
+* **Eficiencia:** A automacao de lembretes reduz o indice de faltas (*no-show*) em ate **29%**. [datasigh.com](https://datasigh.com.br/blog/no-show-reduzir-faltas-em-consultas-medicas/)
+
+## Saloes de Beleza: Por que Lideram
+68% dos clientes preferem agendamento online vs telefone; +25% reservas, -40% faltas. Automacao evita overbooking, integra redes sociais. Pos-pandemia: evita filas.
+
+| Beneficio | Impacto | Fonte |
+|-----------|---------|-------|
+| Preferencia cliente | 68% | [clientepreferido.com](https://clientepreferido.com.br/blog/marketing-digital-salao-beleza-guia-completo) |
+| Menos faltas | -40% | [ggcontabilidade.com](https://ggcontabilidade.com/agenda-online-para-salao-de-beleza/) |
+| +Reservas | +25% | [veja.abril.com](https://veja.abril.com.br/economia/paulistas-sao-os-que-mais-gastam-no-salao-de-beleza/) |
+
+## Sustentabilidade no Mercado de Beleza e Bem-Estar
+A sustentabilidade e uma tendencia central para 2025, impulsionada especialmente pela **Geracao Z**.
+* **87% dos brasileiros** preferem consumir produtos de empresas que demonstram responsabilidade socioambiental. [agenciafiep.com](https://agenciafiep.com.br/2019/02/28/consumidores-preferem-empresas-sustentaveis/)
+* Uso de linhas **vegano-friendly** e **cruelty-free**.
+* Adocao de embalagens **reciclaveis ou biodegradaveis**.
+* Reducao de materiais descartaveis e processos de coloracao menos agressivos.
+
+## Seguranca e Privacidade
+* **75% dos usuarios** relatam preocupacoes com a privacidade. [pwc.com](https://www.pwc.com.br/pt/sala-de-imprensa/release/90-dos-consumidores-brasileiros-afirma-que-a-protecao-dos-seus-dados-pessoais-e-um-dos-fatores-mais-importantes.html) | [cgi.br](https://cgi.br/noticia/releases/dois-em-cada-tres-usuarios-de-internet-brasileiros-se-preocupam-com-o-uso-de-seus-dados-pessoais-em-compras-online-revela-pesquisa-inedita-do-nic-br/)
+* Dados coletados passam por processos de **anonimizacao** e desassociacao de identificadores.
+* Empresas buscam alinhar-se a **LGPD**, oferecendo canais para que os usuarios controlem ou excluam seus dados.
