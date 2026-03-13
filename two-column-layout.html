@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zavvy – Sprint Overview</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #22c55e;
+      --green-light: #dcfce7;
+      --green-dark: #16a34a;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-400: #9ca3af;
+      --gray-600: #4b5563;
+      --gray-900: #111827;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--gray-100);
+      color: var(--gray-900);
+      min-height: 100vh;
+      overflow: hidden; /* prevent body scroll; columns scroll independently */
+    }
+
+    /* ─── Header ─────────────────────────────────── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      height: 56px;
+      background: #fff;
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--green);
+      letter-spacing: -0.5px;
+      margin-right: auto;
+    }
+
+    .header-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: var(--green-light);
+      color: var(--green-dark);
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+    }
+
+    /* ─── Two-column wrapper ─────────────────────── */
+    .layout {
+      position: fixed;
+      top: 56px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+
+    /* ─── LEFT COLUMN – fixed ────────────────────── */
+    .col-left {
+      background: #fff;
+      border-right: 1px solid var(--gray-200);
+      overflow-y: auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sprint-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .sprint-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--gray-400);
+    }
+
+    .sprint-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .sprint-dates {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--gray-600);
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: var(--gray-100);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--green);
+      border-radius: 999px;
+      transition: width 0.4s ease;
+    }
+
+    /* Section title inside left col */
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gray-400);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Milestone list */
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .milestone {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-50);
+    }
+
+    .milestone-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .icon-done   { background: var(--green); color: #fff; }
+    .icon-wip    { background: #fbbf24; color: #fff; }
+    .icon-todo   { background: var(--gray-200); color: var(--gray-600); }
+
+    .milestone-text {
+      flex: 1;
+    }
+
+    .milestone-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .milestone-due {
+      font-size: 0.74rem;
+      color: var(--gray-400);
+      margin-top: 1px;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .badge-done   { background: var(--green-light); color: var(--green-dark); }
+    .badge-wip    { background: #fef9c3; color: #92400e; }
+    .badge-todo   { background: var(--gray-100); color: var(--gray-600); }
+
+    /* Team */
+    .team-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .team-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .team-name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .team-role {
+      font-size: 0.72rem;
+      color: var(--gray-400);
+    }
+
+    /* Links */
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--green-dark);
+      text-decoration: none;
+      padding: 0.4rem 0.5rem;
+      border-radius: 6px;
+      transition: background 0.15s;
+    }
+
+    .link-item:hover {
+      background: var(--green-light);
+    }
+
+    .link-icon {
+      font-size: 0.9rem;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--gray-100);
+    }
+
+    /* ─── RIGHT COLUMN – scrollable ──────────────── */
+    .col-right {
+      overflow-y: auto;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* Content block */
+    .content-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .block-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--green);
+    }
+
+    .block-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .block-text {
+      font-size: 0.95rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    /* Illustration card */
+    .illustration-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+      background: var(--gray-50);
+    }
+
+    .illustration-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Placeholder image when no real image available */
+    .img-placeholder {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 50%, #6ee7b7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: var(--green-dark);
+    }
+
+    .img-placeholder-icon {
+      font-size: 2.5rem;
+    }
+
+    .img-placeholder-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .illustration-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    /* Two images side by side */
+    .img-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* Mobile iframe card */
+    .mobile-preview-card {
+      background: #fff;
+      border: 1px solid var(--gray-200);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-preview-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      align-self: flex-start;
+    }
+
+    /* Simulated phone shell */
+    .phone-shell {
+      width: 393px;
+      background: #1a1a1a;
+      border-radius: 48px;
+      padding: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 30px;
+      background: #1a1a1a;
+      border-radius: 0 0 20px 20px;
+      margin: 0 auto 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .phone-screen {
+      border-radius: 36px;
+      overflow: hidden;
+      background: #fff;
+      width: 100%;
+      aspect-ratio: 393 / 760;
+      position: relative;
+    }
+
+    .phone-screen iframe {
+      width: 393px;
+      height: 760px;
+      border: none;
+      display: block;
+      transform-origin: top left;
+      /* scale to fit inside the shell */
+    }
+
+    .phone-home-bar {
+      width: 120px;
+      height: 5px;
+      background: #444;
+      border-radius: 999px;
+      margin: 10px auto 0;
+    }
+
+    /* Content section separator */
+    .section-sep {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--gray-400);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .section-sep::before,
+    .section-sep::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gray-200);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+        position: static;
+        min-height: calc(100vh - 56px);
+      }
+
+      body { overflow: auto; }
+
+      .col-left {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .phone-shell {
+        width: 100%;
+        max-width: 393px;
+      }
+
+      .img-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <span class="logo">zavvy</span>
+    <span class="header-tag">Sprint Overview</span>
+  </header>
+
+  <div class="layout">
+
+    <!-- ═══════════════════════════════════════════════
+         COLUNA ESQUERDA – fixa com info da sprint
+    ════════════════════════════════════════════════ -->
+    <aside class="col-left">
+
+      <!-- Sprint info -->
+      <div class="sprint-header">
+        <span class="sprint-label">Sprint Atual</span>
+        <span class="sprint-name">Sprint 04 – Onboarding</span>
+        <span class="sprint-dates">10 mar – 24 mar 2026</span>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Progresso</span>
+          <span>68%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: 68%;"></div>
+        </div>
+        <div class="progress-meta" style="color: var(--gray-400);">
+          <span>17 de 25 tarefas concluídas</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Milestones -->
+      <div>
+        <div class="section-title">Milestones</div>
+        <div class="milestone-list">
+
+          <div class="milestone">
+            <div class="milestone-icon icon-done">✓</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Layout da landing page</div>
+              <div class="milestone-due">Entregue em 05/03</div>
+            </div>
+            <span class="badge badge-done">Feito</span>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-icon icon-done">✓</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Integração com WhatsApp Business API</div>
+              <div class="milestone-due">Entregue em 08/03</div>
+            </div>
+            <span class="badge badge-done">Feito</span>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-icon icon-wip">◐</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Fluxo de onboarding do usuário</div>
+              <div class="milestone-due">Previsto: 18/03</div>
+            </div>
+            <span class="badge badge-wip">Em andamento</span>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-icon icon-wip">◐</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Layout duas colunas – Sprint Overview</div>
+              <div class="milestone-due">Previsto: 15/03</div>
+            </div>
+            <span class="badge badge-wip">Em andamento</span>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-icon icon-todo">○</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Testes automatizados E2E</div>
+              <div class="milestone-due">Previsto: 22/03</div>
+            </div>
+            <span class="badge badge-todo">A fazer</span>
+          </div>
+
+          <div class="milestone">
+            <div class="milestone-icon icon-todo">○</div>
+            <div class="milestone-text">
+              <div class="milestone-name">Deploy em produção (v1.2)</div>
+              <div class="milestone-due">Previsto: 24/03</div>
+            </div>
+            <span class="badge badge-todo">A fazer</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Team -->
+      <div>
+        <div class="section-title">Time</div>
+        <div class="team-list">
+          <div class="team-item">
+            <div class="avatar">FB</div>
+            <div>
+              <div class="team-name">Fabio</div>
+              <div class="team-role">Product Owner</div>
+            </div>
+          </div>
+          <div class="team-item">
+            <div class="avatar" style="background:#6366f1;">MR</div>
+            <div>
+              <div class="team-name">Marina Rocha</div>
+              <div class="team-role">Design</div>
+            </div>
+          </div>
+          <div class="team-item">
+            <div class="avatar" style="background:#f59e0b;">CS</div>
+            <div>
+              <div class="team-name">Carlos Silva</div>
+              <div class="team-role">Frontend</div>
+            </div>
+          </div>
+          <div class="team-item">
+            <div class="avatar" style="background:#ec4899;">LP</div>
+            <div>
+              <div class="team-name">Luísa Pereira</div>
+              <div class="team-role">Backend</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Links rápidos -->
+      <div>
+        <div class="section-title">Links Rápidos</div>
+        <div class="link-list">
+          <a href="#" class="link-item">
+            <span class="link-icon">📋</span> Board do Sprint
+          </a>
+          <a href="#" class="link-item">
+            <span class="link-icon">📎</span> Figma – Protótipos
+          </a>
+          <a href="#" class="link-item">
+            <span class="link-icon">📁</span> Documentação técnica
+          </a>
+          <a href="#" class="link-item">
+            <span class="link-icon">🔗</span> Repositório GitHub
+          </a>
+          <a href="#" class="link-item">
+            <span class="link-icon">📊</span> Métricas de produto
+          </a>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ═══════════════════════════════════════════════
+         COLUNA DIREITA – conteúdo scrollável
+    ════════════════════════════════════════════════ -->
+    <main class="col-right">
+
+      <!-- Bloco 1 – Introdução -->
+      <div class="content-block">
+        <span class="block-number">01 · Contexto</span>
+        <h2 class="block-title">Zavvy: agendamentos inteligentes via WhatsApp</h2>
+        <p class="block-text">
+          O Zavvy é uma plataforma SaaS que automatiza o agendamento de clientes para pequenos negócios —
+          salões de beleza, clínicas, studios e muito mais. Através da integração com o WhatsApp Business API,
+          os clientes confirmam, cancelam e remarcam horários diretamente pelo app que já usam todos os dias,
+          sem baixar nada novo.
+        </p>
+
+        <!-- Imagem ilustrativa -->
+        <div class="illustration-card">
+          <div class="img-placeholder">
+            <span class="img-placeholder-icon">📱</span>
+            <span class="img-placeholder-label">Diagrama de fluxo – WhatsApp ↔ Zavvy ↔ Agenda</span>
+          </div>
+          <div class="illustration-caption">Fig. 1 — Fluxo de confirmação automática via WhatsApp Business API</div>
+        </div>
+      </div>
+
+      <div class="section-sep">Milestone 1 &amp; 2 – Concluídos</div>
+
+      <!-- Bloco 2 – Landing page -->
+      <div class="content-block">
+        <span class="block-number">02 · Landing Page</span>
+        <h2 class="block-title">Presença digital que converte</h2>
+        <p class="block-text">
+          A landing page do Zavvy foi construída para comunicar o valor do produto de forma clara e direta.
+          As seções seguem a jornada do visitante: entendimento do problema, solução, funcionalidades,
+          precificação e chamada para ação.
+        </p>
+
+        <div class="img-grid">
+          <div class="illustration-card">
+            <div class="img-placeholder" style="height:160px; background: linear-gradient(135deg,#d1fae5,#6ee7b7);">
+              <span class="img-placeholder-icon">🏠</span>
+              <span class="img-placeholder-label">Hero section</span>
+            </div>
+            <div class="illustration-caption">Hero – headline + CTA principal</div>
+          </div>
+          <div class="illustration-card">
+            <div class="img-placeholder" style="height:160px; background: linear-gradient(135deg,#e0e7ff,#a5b4fc);">
+              <span class="img-placeholder-icon">💰</span>
+              <span class="img-placeholder-label">Pricing section</span>
+            </div>
+            <div class="illustration-caption">Pricing – plano único Professional</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-sep">Preview do Site – Mobile 393px</div>
+
+      <!-- Bloco 3 – iframe mobile zavvy.com.br -->
+      <div class="content-block">
+        <span class="block-number">03 · Produto ao vivo</span>
+        <h2 class="block-title">Zavvy no mobile – experiência real</h2>
+        <p class="block-text">
+          Veja abaixo a versão mobile do site Zavvy na largura de 393 px (iPhone 15 Pro).
+          O design responsivo garante que a experiência no celular seja tão completa quanto na desktop,
+          priorizando a chamada para ação e a demonstração do produto.
+        </p>
+
+        <div class="mobile-preview-card">
+          <span class="mobile-preview-label">zavvy.com.br · 393 px (iPhone 15 Pro)</span>
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <iframe
+                src="https://zavvy.com.br"
+                title="Zavvy – versão mobile"
+                loading="lazy"
+                style="
+                  width: 393px;
+                  height: 760px;
+                  border: none;
+                  display: block;
+                  transform: scale(calc((100% - 0px) / 393));
+                  transform-origin: top left;
+                "
+              ></iframe>
+            </div>
+            <div class="phone-home-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-sep">Milestone 3 – Em andamento</div>
+
+      <!-- Bloco 4 – Onboarding -->
+      <div class="content-block">
+        <span class="block-number">04 · Onboarding</span>
+        <h2 class="block-title">Jornada de ativação do usuário</h2>
+        <p class="block-text">
+          O fluxo de onboarding guia novos usuários em 4 passos simples: criação de conta,
+          configuração do negócio, personalização do link de agendamento e conexão com o WhatsApp.
+          O objetivo é chegar ao primeiro agendamento real em menos de 5 minutos.
+        </p>
+
+        <div class="illustration-card">
+          <div class="img-placeholder" style="background: linear-gradient(135deg,#fce7f3,#fbcfe8);">
+            <span class="img-placeholder-icon">🚀</span>
+            <span class="img-placeholder-label">Wireframe do fluxo de onboarding (4 steps)</span>
+          </div>
+          <div class="illustration-caption">Fig. 2 — Wizard de onboarding: Conta → Negócio → Link → WhatsApp</div>
+        </div>
+
+        <p class="block-text">
+          Cada etapa foi projetada para ter o menor atrito possível. Campos opcionais são ocultados
+          por padrão e o usuário pode completar o perfil depois, garantindo que o tempo até o
+          primeiro valor (<em>time-to-value</em>) seja o menor possível.
+        </p>
+      </div>
+
+      <div class="section-sep">App ao vivo – Preview Mobile</div>
+
+      <!-- Bloco 5 – iframe do app -->
+      <div class="content-block">
+        <span class="block-number">05 · App · Booking page</span>
+        <h2 class="block-title">Link de agendamento público</h2>
+        <p class="block-text">
+          Cada profissional recebe um link único (ex.: <code>booking.zavvy.com.br/seunome</code>)
+          que pode ser compartilhado no WhatsApp, Instagram bio, ou impresso em cartão de visita.
+          O cliente escolhe o serviço, a data e o horário sem precisar criar conta.
+        </p>
+
+        <div class="mobile-preview-card">
+          <span class="mobile-preview-label">booking.zavvy.com.br · 393 px (iPhone 15 Pro)</span>
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <iframe
+                src="https://booking.zavvy.com.br/ofabio"
+                title="Zavvy – booking page mobile"
+                loading="lazy"
+                style="
+                  width: 393px;
+                  height: 760px;
+                  border: none;
+                  display: block;
+                "
+              ></iframe>
+            </div>
+            <div class="phone-home-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-sep">Próximos passos</div>
+
+      <!-- Bloco 6 – Próximos passos -->
+      <div class="content-block">
+        <span class="block-number">06 · Roadmap</span>
+        <h2 class="block-title">O que vem a seguir</h2>
+        <p class="block-text">
+          Após a conclusão do onboarding, o foco da Sprint 05 será cobertura de testes automatizados E2E
+          e deploy da versão 1.2 em produção com zero downtime. Em paralelo, a equipe de design
+          iniciará os protótipos para o módulo de relatórios e análise de desempenho.
+        </p>
+
+        <div class="illustration-card">
+          <div class="img-placeholder" style="background: linear-gradient(135deg,#fef9c3,#fde68a);">
+            <span class="img-placeholder-icon">🗓️</span>
+            <span class="img-placeholder-label">Roadmap Q2 2026</span>
+          </div>
+          <div class="illustration-caption">Fig. 3 — Roadmap de produto — Q2 2026</div>
+        </div>
+      </div>
+
+    </main>
+    <!-- /col-right -->
+
+  </div>
+  <!-- /layout -->
+
+  <script>
+    // Ajusta o iframe scale dinamicamente ao tamanho real do phone-screen
+    function scaleIframes() {
+      document.querySelectorAll('.phone-screen').forEach(screen => {
+        const iframe = screen.querySelector('iframe');
+        if (!iframe) return;
+        const scaleX = screen.clientWidth / 393;
+        iframe.style.transform = `scale(${scaleX})`;
+        iframe.style.transformOrigin = 'top left';
+        // Adjust container height to match scaled iframe
+        screen.style.height = (760 * scaleX) + 'px';
+      });
+    }
+
+    scaleIframes();
+    window.addEventListener('resize', scaleIframes);
+  </script>
+
+</body>
+</html>
