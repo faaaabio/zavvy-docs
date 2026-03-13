@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "honkit": "latest"
+  },
+  "scripts": {
+    "build": "honkit build",
+    "serve": "honkit serve"
+  }
+}

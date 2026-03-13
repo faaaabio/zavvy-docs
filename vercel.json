@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npx honkit build",
+  "outputDirectory": "_book",
+  "installCommand": "npm install honkit --save-dev"
+}
