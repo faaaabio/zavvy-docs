@@ -1,50 +1,83 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Zavvy",
-  "theme": "mint",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#22C55E",
-    "dark": "#15803D"
+    "light": {
+      "brand": "#16A34A"
+    },
+    "dark": {
+      "brand": "#22C55E"
+    }
   },
   "favicon": "favicon.svg",
   "navigation": {
     "tabs": [
       {
         "tab": "Documentação",
+        "icon": "book",
         "groups": [
           {
             "group": "Introdução",
-            "pages": ["index"]
+            "icon": "home",
+            "pages": [
+              {
+                "title": "Início",
+                "path": "index"
+              }
+            ]
           },
           {
             "group": "Produto",
+            "icon": "package",
             "pages": [
-              "produto/visao-geral",
-              "produto/personas",
-              "produto/casos-de-uso"
+              {
+                "title": "Visão Geral",
+                "path": "produto/visao-geral"
+              },
+              {
+                "title": "Personas",
+                "path": "produto/personas"
+              },
+              {
+                "title": "Casos de Uso",
+                "path": "produto/casos-de-uso"
+              }
             ]
           },
           {
             "group": "Pesquisa",
+            "icon": "search",
             "pages": [
-              "pesquisa/profissionais",
-              "pesquisa/mercado",
-              "pesquisa/oportunidades"
+              {
+                "title": "Profissionais",
+                "path": "pesquisa/profissionais"
+              },
+              {
+                "title": "Mercado",
+                "path": "pesquisa/mercado"
+              },
+              {
+                "title": "Oportunidades",
+                "path": "pesquisa/oportunidades"
+              }
             ]
           },
           {
             "group": "Design",
+            "icon": "palette",
             "pages": [
-              "design/acessibilidade",
-              "design/bugs"
+              {
+                "title": "Acessibilidade",
+                "path": "design/acessibilidade"
+              },
+              {
+                "title": "Bugs",
+                "path": "design/bugs"
+              }
             ]
           }
         ]
       }
     ]
-  },
-  "footer": {
-    "socials": {}
   }
 }
