@@ -73,24 +73,24 @@
           {
             "group": "Produto",
             "pages": [
-              "novos/produto/visao-geral",
-              "novos/produto/casos-de-uso",
-              "novos/produto/personas"
+              "produto/visao-geral",
+              "produto/casos-de-uso",
+              "produto/personas"
             ]
           },
           {
             "group": "Pesquisa",
             "pages": [
-              "novos/pesquisa/mercado",
-              "novos/pesquisa/oportunidades",
-              "novos/pesquisa/profissionais"
+              "pesquisa/mercado",
+              "pesquisa/oportunidades",
+              "pesquisa/profissionais"
             ]
           },
           {
             "group": "Design",
             "pages": [
-              "novos/design/acessibilidade",
-              "novos/design/bugs"
+              "design/acessibilidade",
+              "design/bugs"
             ]
           }
         ]
