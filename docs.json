@@ -61,28 +61,15 @@
                 "path": "design/melhorias"
               }
             ]
-          },
-          {
-            "group": "Help Center",
-            "icon": "circle-question",
-            "pages": [
-              {
-                "title": "Perguntas Frequentes",
-                "path": "help-center/faq"
-              },
-              {
-                "title": "Como Começar",
-                "path": "help-center/como-comecar"
-              },
-              {
-                "title": "Contato",
-                "path": "help-center/contato"
-              }
-            ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock-rotate-left",
+        "groups": [
           {
             "group": "Changelog",
-            "icon": "clock-rotate-left",
             "pages": [
               {
                 "title": "Atualizações",
