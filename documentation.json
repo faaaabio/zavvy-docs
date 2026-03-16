@@ -26,24 +26,6 @@
             ]
           },
           {
-            "group": "Produto",
-            "icon": "package",
-            "pages": [
-              {
-                "title": "Visão Geral",
-                "path": "produto/visao-geral"
-              },
-              {
-                "title": "Personas",
-                "path": "produto/personas"
-              },
-              {
-                "title": "Casos de Uso",
-                "path": "produto/casos-de-uso"
-              }
-            ]
-          },
-          {
             "group": "Pesquisa",
             "icon": "search",
             "pages": [
@@ -72,6 +54,10 @@
               {
                 "title": "Bugs",
                 "path": "design/bugs"
+              },
+              {
+                "title": "Melhorias",
+                "path": "design/melhorias"
               }
             ]
           }
