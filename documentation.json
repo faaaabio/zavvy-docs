@@ -26,7 +26,7 @@
             ]
           },
           {
-            "group": "Pesquisa",
+            "group": "Experiência",
             "icon": "search",
             "pages": [
               {
@@ -44,16 +44,16 @@
             ]
           },
           {
-            "group": "Design",
+            "group": "Interface",
             "icon": "palette",
             "pages": [
               {
-                "title": "Acessibilidade",
-                "path": "design/acessibilidade"
-              },
-              {
                 "title": "Bugs",
                 "path": "design/bugs"
+              },
+              {
+                "title": "Acessibilidade",
+                "path": "design/acessibilidade"
               },
               {
                 "title": "Melhorias",
