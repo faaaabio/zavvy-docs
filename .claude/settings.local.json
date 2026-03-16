@@ -25,7 +25,12 @@
       "Bash(honkit --version)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:4000)",
       "Bash(curl -sv http://127.0.0.1:4000/)",
-      "Bash(honkit build:*)"
+      "Bash(honkit build:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ndocs: remove seção Produto, criar página Melhorias e adicionar datas\n\n- Remove páginas de Produto \\(visao-geral, personas, casos-de-uso\\)\n- Move B-010 para nova página de Melhorias \\(design/melhorias.mdx\\)\n- Adiciona coluna Data nas tabelas de bugs e melhorias\n- Atualiza navegação e cards da página inicial\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ndocs: remove CardGroup não suportado pelo DocumentationAI\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
     ]
   }
 }
