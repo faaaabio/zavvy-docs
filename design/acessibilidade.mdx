@@ -1,21 +1,74 @@
 ---
 title: Acessibilidade
-description: Critérios de acessibilidade da interface
+description: Detalhamento de cada critério de acessibilidade identificado.
 ---
 
-## Abertos
+## A-001
 
-| # | Critério | Como verificar | Resultado esperado | Data |
-|---|----------|----------------|--------------------|------|
-| 1 | Tamanho mínimo de fonte | Inspecionar todos os elementos de texto | Nenhum texto abaixo de 14px | 2025-03-16 |
-| 2 | Uso de bold | Revisar textos em negrito na interface | Bold apenas em títulos e informações de alta relevância | 2025-03-16 |
-| 3 | Tamanho de títulos | Comparar títulos com o corpo do texto | Títulos proporcionais, sem destaque excessivo | 2025-03-16 |
-| 4 | Contraste branco sobre verde | Inspecionar elementos com texto branco em fundo verde | Contraste mínimo 4.5:1 (WCAG AA) — evitar a combinação | 2025-03-16 |
-| 5 | Imagens de pessoas | Revisar fotos de perfil, banners e ilustrações | Usar fotos reais de pessoas em contextos reais de atendimento — evitar ilustrações genéricas ou stock photos óbvios | 2025-03-16 |
-| 6 | Imagens de cenários | Revisar imagens de ambientes e situações | Mostrar cenários reais de uso: consultórios, salões, ateliês — não ambientes encenados ou artificiais | 2025-03-16 |
+**Descrição:** Elementos de texto com tamanho abaixo do mínimo recomendado comprometem a legibilidade para usuários com baixa visão.
 
-## Resolvidos
+**Correção esperada:** Nenhum elemento de texto deve ser exibido abaixo de 14px em toda a interface.
 
-| # | Critério | Data | Resolvido em |
-|---|----------|------|--------------|
-| — | — | — | — |
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Global |
+
+---
+
+## A-002
+
+**Descrição:** O uso de negrito está sendo aplicado de forma indiscriminada, reduzindo sua eficácia como recurso de destaque.
+
+**Correção esperada:** Bold deve ser reservado apenas para títulos e informações de alta relevância, evitando uso decorativo.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Global |
+
+---
+
+## A-003
+
+**Descrição:** Títulos não mantêm proporção adequada em relação ao corpo do texto, gerando hierarquia visual inconsistente.
+
+**Correção esperada:** Títulos devem ser proporcionais ao corpo do texto, sem destaque excessivo que confunda a hierarquia da página.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Global |
+
+---
+
+## A-004
+
+**Descrição:** Texto branco sobre fundo verde não atinge o contraste mínimo exigido pelas diretrizes WCAG AA.
+
+**Correção esperada:** A combinação branco sobre verde deve ser evitada ou ajustada para atingir contraste mínimo de 4.5:1 (WCAG AA).
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Global |
+
+---
+
+## A-005
+
+**Descrição:** Fotos de perfil, banners e ilustrações utilizam imagens genéricas ou stock photos que não representam contextos reais de atendimento.
+
+**Correção esperada:** Usar fotos reais de pessoas em situações reais de trabalho — evitar ilustrações genéricas ou stock photos óbvios.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Perfil · Banners |
+
+---
+
+## A-006
+
+**Descrição:** Imagens de ambientes e cenários mostram situações encenadas ou artificiais que não refletem o contexto real de uso da plataforma.
+
+**Correção esperada:** Mostrar cenários reais de uso: consultórios, salões, ateliês — não ambientes encenados ou artificialmente produzidos.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Banners · Onboarding |

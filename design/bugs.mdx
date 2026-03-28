@@ -1,28 +1,124 @@
 ---
 title: Bugs
-description: Registro de bugs abertos e resolvidos
+description: Detalhamento de cada bug identificado, organizado por área.
 ---
 
-## Abertos
+## Agenda
 
-| ID | Descrição | Área | Severidade | Data |
-|----|-----------|------|------------|------|
-| B-001 | Bloqueio de horário: alteração de Data/Hora início e fim não reflete os valores digitados pelo usuário | Agenda | Alta | 2025-03-16 |
-| B-002 | Após agendamento confirmado, evento não aparece no Google Calendar mesmo com conta conectada | Integrações | Alta | 2025-03-16 |
-| B-003 | Usuário convidado não é direcionado ao cadastro normal; fluxo deve incluir preenchimento de profissão e serviços oferecidos | Cadastro / Convite | Alta | 2025-03-16 |
-| B-005 | Versão mobile não exibe acesso à seção de equipes | Equipes / Mobile | Alta | 2025-03-16 |
-| B-006 | No link do profissional, valores dos serviços quebram o layout acima de R$ 99 no mobile | Link do Profissional / Mobile | Média | 2025-03-16 |
-| B-007 | Ao definir duração do serviço, não informa que o valor inserido é em minutos | Serviços | Baixa | 2025-03-16 |
-| B-008 | QR code gerado é muito pequeno e no iPhone a imagem não abre diretamente ao baixar | QR Code / Mobile | Média | 2025-03-16 |
-| B-009 | Notificações/avisos informam apenas "novo agendamento", sem detalhes adicionais | Notificações | Média | 2025-03-16 |
-| B-011 | Nos detalhes do cliente, não exibe nenhuma mensagem enviada para o cliente | Clientes | Média | 2025-03-16 |
+### B-001
 
-## Resolvidos
+**Descrição:** Alteração de Data/Hora início e fim não reflete os valores digitados pelo usuário — o campo bloqueia ou reseta o valor inserido.
 
-| ID | Descrição | Área | Data | Resolvido em |
-|----|-----------|------|------|--------------|
-| — | — | — | — | — |
+**Correção esperada:** Os campos de Data/Hora devem aceitar e persistir os valores digitados sem bloqueios, resets ou sobrescritas automáticas.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Agenda |
+
+### B-002
+
+**Descrição:** Após agendamento confirmado, o evento não aparece no Google Calendar mesmo com a conta conectada.
+
+**Correção esperada:** A integração deve criar o evento automaticamente após a confirmação, garantindo sincronia em tempo real com o Google Calendar.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Agenda · Integrações |
 
 ---
 
-> Ao identificar um bug, registre: **descrição**, **passos para reproduzir**, **resultado esperado** e **resultado atual**.
+## Cadastro
+
+### B-003
+
+**Descrição:** Usuário convidado não é direcionado ao fluxo de cadastro completo — o preenchimento de profissão e serviços oferecidos é ignorado.
+
+**Correção esperada:** O fluxo de convite deve incluir as etapas de profissão e serviços, integrando o convidado ao cadastro padrão da plataforma.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Cadastro · Convite |
+
+---
+
+## Equipes
+
+### B-005
+
+**Descrição:** Na versão mobile, o acesso à seção de equipes não é exibido.
+
+**Correção esperada:** A navegação para equipes deve estar visível e acessível no mobile, com paridade em relação ao desktop.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Alta | Equipes · Mobile |
+
+---
+
+## Link do Profissional
+
+### B-006
+
+**Descrição:** Valores de serviços acima de R$ 99 quebram o layout no mobile.
+
+**Correção esperada:** O componente de preço deve suportar valores de qualquer comprimento sem quebrar o layout, adaptando-se responsivamente.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Link do Profissional · Mobile |
+
+---
+
+## Serviços
+
+### B-007
+
+**Descrição:** Ao definir a duração de um serviço, o campo não indica que o valor deve ser inserido em minutos.
+
+**Correção esperada:** O campo deve exibir a unidade "min" como label, placeholder ou texto auxiliar para evitar ambiguidade.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Baixa | Serviços |
+
+---
+
+## QR Code
+
+### B-008
+
+**Descrição:** O QR code gerado é muito pequeno e, no iPhone, a imagem não abre diretamente ao ser baixada.
+
+**Correção esperada:** O QR code deve ser gerado em resolução adequada para leitura, e o download deve funcionar corretamente em dispositivos iOS.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | QR Code · Mobile |
+
+---
+
+## Notificações
+
+### B-009
+
+**Descrição:** Notificações informam apenas "novo agendamento", sem detalhes sobre o cliente, serviço ou horário.
+
+**Correção esperada:** As notificações devem incluir: nome do cliente, serviço contratado e horário do agendamento.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Notificações |
+
+---
+
+## Clientes
+
+### B-011
+
+**Descrição:** Na tela de detalhes do cliente, nenhuma mensagem enviada anteriormente é exibida.
+
+**Correção esperada:** O histórico de mensagens enviadas ao cliente deve aparecer na tela de detalhes, permitindo rastreabilidade da comunicação.
+
+| Status | Prioridade | Telas |
+|--------|------------|-------|
+| Aberto | Média | Clientes |
