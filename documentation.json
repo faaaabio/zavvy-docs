@@ -16,7 +16,7 @@
         "icon": "book",
         "groups": [
           {
-            "group": "Introdução",
+            "group": "Visão Geral",
             "icon": "home",
             "pages": [
               {
@@ -26,7 +26,7 @@
             ]
           },
           {
-            "group": "Bugs",
+            "group": "Módulos",
             "icon": "bug",
             "pages": [
               {
