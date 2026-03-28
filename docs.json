@@ -46,8 +46,7 @@
             "pages": [
               { "title": "Tipografia", "path": "global/tipografia" },
               { "title": "Contraste", "path": "global/contraste" },
-              { "title": "Imagens", "path": "global/imagens" },
-              { "title": "Agenda", "path": "global/agenda" }
+              { "title": "Imagens", "path": "global/imagens" }
             ]
           }
         ]
