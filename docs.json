@@ -13,7 +13,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentação",
+        "tab": "Review",
         "icon": "book",
         "groups": [
           {
@@ -27,13 +27,19 @@
             ]
           },
           {
-            "group": "Interface",
-            "icon": "palette",
+            "group": "Bugs",
+            "icon": "bug",
             "pages": [
               {
                 "title": "Bugs",
                 "path": "design/bugs"
-              },
+              }
+            ]
+          },
+          {
+            "group": "Global",
+            "icon": "globe",
+            "pages": [
               {
                 "title": "Acessibilidade",
                 "path": "design/acessibilidade"
