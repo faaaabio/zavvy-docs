@@ -4,95 +4,82 @@ sidebarTitle: Status
 description: Resumo dos apontamentos abertos e resolvidos por categoria.
 ---
 
-import { useState } from 'react'
-
-export const allRows = [
-  { id: 'B-001', href: '/modulos/agenda#b-001', desc: 'Alteração de Data/Hora início e fim não reflete os valores digitados pelo usuário', cat: 'Bug', area: 'Agenda', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-002', href: '/modulos/agenda#b-002', desc: 'Evento não aparece no Google Calendar mesmo com conta conectada', cat: 'Bug', area: 'Integrações', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-003', href: '/modulos/cadastro#b-003', desc: 'Usuário convidado não é direcionado ao cadastro completo', cat: 'Bug', area: 'Cadastro', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-005', href: '/modulos/equipes#b-005', desc: 'Versão mobile não exibe acesso à seção de equipes', cat: 'Bug', area: 'Equipes', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-004', href: '/design/acessibilidade#a-004', desc: 'Texto branco sobre verde não atinge contraste mínimo WCAG AA', cat: 'Acessibilidade', area: 'Global', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-001', href: '/design/acessibilidade#a-001', desc: 'Elementos de texto abaixo de 14px comprometem a legibilidade', cat: 'Acessibilidade', area: 'Global', prio: 'Alta', priord: 1, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-006', href: '/modulos/link-profissional#b-006', desc: 'Valores de serviços acima de R$ 99 quebram o layout no mobile', cat: 'Bug', area: 'Link do Profissional', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-008', href: '/modulos/qr-code#b-008', desc: 'QR code muito pequeno e imagem não abre corretamente no iPhone', cat: 'Bug', area: 'QR Code', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-009', href: '/modulos/notificacoes#b-009', desc: 'Notificações sem detalhes do cliente, serviço ou horário', cat: 'Bug', area: 'Notificações', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-011', href: '/modulos/clientes#b-011', desc: 'Detalhes do cliente não exibem mensagens enviadas', cat: 'Bug', area: 'Clientes', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-002', href: '/design/acessibilidade#a-002', desc: 'Bold aplicado de forma indiscriminada na interface', cat: 'Acessibilidade', area: 'Global', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-003', href: '/design/acessibilidade#a-003', desc: 'Títulos sem proporção adequada em relação ao corpo do texto', cat: 'Acessibilidade', area: 'Global', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-005', href: '/design/acessibilidade#a-005', desc: 'Fotos de perfil e banners usam imagens genéricas ou stock photos', cat: 'Acessibilidade', area: 'Perfil · Banners', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'A-006', href: '/design/acessibilidade#a-006', desc: 'Imagens de cenários mostram situações encenadas ou artificiais', cat: 'Acessibilidade', area: 'Banners · Onboarding', prio: 'Média', priord: 2, status: 'Aberto', data: '2025-03-16' },
-  { id: 'B-007', href: '/modulos/servicos#b-007', desc: 'Campo de duração do serviço não indica que o valor é em minutos', cat: 'Bug', area: 'Serviços', prio: 'Baixa', priord: 3, status: 'Aberto', data: '2025-03-16' },
-  { id: 'M-001', href: '/design/melhorias#m-001', desc: 'Ícone de tesoura na agenda não é aplicável a todos os setores', cat: 'Melhoria', area: 'Agenda', prio: 'Baixa', priord: 3, status: 'Aberto', data: '2025-03-16' },
-]
-
-export function StatusTable({ status }) {
-  const [col, setCol] = useState(null)
-  const [dir, setDir] = useState('asc')
-
-  const rows = allRows.filter(r => r.status === status)
-
-  const toggle = (c) => {
-    if (col === c) setDir(d => d === 'asc' ? 'desc' : 'asc')
-    else { setCol(c); setDir('asc') }
-  }
-
-  const arrow = (c) => col === c ? (dir === 'asc' ? ' ↑' : ' ↓') : ' ↕'
-
-  const sorted = col === null ? rows : [...rows].sort((a, b) => {
-    const map = { id: 'id', desc: 'desc', cat: 'cat', area: 'area', prio: 'priord', data: 'data' }
-    const key = map[col]
-    const av = a[key]; const bv = b[key]
-    const cmp = typeof av === 'number' ? av - bv : String(av).localeCompare(String(bv), 'pt')
-    return dir === 'asc' ? cmp : -cmp
-  })
-
-  const thStyle = { cursor: 'pointer', userSelect: 'none', whiteSpace: 'nowrap' }
-
-  if (rows.length === 0) return (
-    <table><thead><tr>
-      <th>ID</th><th>Descrição</th><th>Categoria</th><th>Área</th><th>Prioridade</th><th>Data</th>
-    </tr></thead><tbody><tr><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr></tbody></table>
-  )
-
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th style={thStyle} onClick={() => toggle('id')}>ID{arrow('id')}</th>
-          <th style={thStyle} onClick={() => toggle('desc')}>Descrição{arrow('desc')}</th>
-          <th style={thStyle} onClick={() => toggle('cat')}>Categoria{arrow('cat')}</th>
-          <th style={thStyle} onClick={() => toggle('area')}>Área{arrow('area')}</th>
-          <th style={thStyle} onClick={() => toggle('prio')}>Prioridade{arrow('prio')}</th>
-          <th style={thStyle} onClick={() => toggle('data')}>Data{arrow('data')}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {sorted.map(r => (
-          <tr key={r.id}>
-            <td><a href={r.href}>{r.id}</a></td>
-            <td>{r.desc}</td>
-            <td>{r.cat}</td>
-            <td>{r.area}</td>
-            <td>{r.prio}</td>
-            <td>{r.data}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
-}
-
 ## Aberto
 
-<StatusTable status="Aberto" />
+<Tabs>
+  <Tab title="Por Prioridade">
+    | ID | Descrição | Categoria | Área | Prioridade | Data |
+    |----|-----------|-----------|------|------------|------|
+    | [B-001](/modulos/agenda#b-001) | Alteração de Data/Hora início e fim não reflete os valores digitados | Bug | Agenda | Alta | 2025-03-16 |
+    | [B-002](/modulos/agenda#b-002) | Evento não aparece no Google Calendar mesmo com conta conectada | Bug | Integrações | Alta | 2025-03-16 |
+    | [B-003](/modulos/cadastro#b-003) | Usuário convidado não é direcionado ao cadastro completo | Bug | Cadastro | Alta | 2025-03-16 |
+    | [B-005](/modulos/equipes#b-005) | Versão mobile não exibe acesso à seção de equipes | Bug | Equipes | Alta | 2025-03-16 |
+    | [A-001](/design/acessibilidade#a-001) | Elementos de texto abaixo de 14px comprometem a legibilidade | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [A-004](/design/acessibilidade#a-004) | Texto branco sobre verde não atinge contraste mínimo WCAG AA | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [B-006](/modulos/link-profissional#b-006) | Valores de serviços acima de R$ 99 quebram o layout no mobile | Bug | Link do Profissional | Média | 2025-03-16 |
+    | [B-008](/modulos/qr-code#b-008) | QR code muito pequeno e imagem não abre corretamente no iPhone | Bug | QR Code | Média | 2025-03-16 |
+    | [B-009](/modulos/notificacoes#b-009) | Notificações sem detalhes do cliente, serviço ou horário | Bug | Notificações | Média | 2025-03-16 |
+    | [B-011](/modulos/clientes#b-011) | Detalhes do cliente não exibem mensagens enviadas | Bug | Clientes | Média | 2025-03-16 |
+    | [A-002](/design/acessibilidade#a-002) | Bold aplicado de forma indiscriminada na interface | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-003](/design/acessibilidade#a-003) | Títulos sem proporção adequada em relação ao corpo do texto | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-005](/design/acessibilidade#a-005) | Fotos de perfil e banners usam imagens genéricas ou stock photos | Acessibilidade | Perfil · Banners | Média | 2025-03-16 |
+    | [A-006](/design/acessibilidade#a-006) | Imagens de cenários mostram situações encenadas ou artificiais | Acessibilidade | Banners · Onboarding | Média | 2025-03-16 |
+    | [B-007](/modulos/servicos#b-007) | Campo de duração do serviço não indica que o valor é em minutos | Bug | Serviços | Baixa | 2025-03-16 |
+    | [M-001](/design/melhorias#m-001) | Ícone de tesoura na agenda não é aplicável a todos os setores | Melhoria | Agenda | Baixa | 2025-03-16 |
+  </Tab>
+  <Tab title="Por Categoria">
+    | ID | Descrição | Categoria | Área | Prioridade | Data |
+    |----|-----------|-----------|------|------------|------|
+    | [A-001](/design/acessibilidade#a-001) | Elementos de texto abaixo de 14px comprometem a legibilidade | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [A-002](/design/acessibilidade#a-002) | Bold aplicado de forma indiscriminada na interface | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-003](/design/acessibilidade#a-003) | Títulos sem proporção adequada em relação ao corpo do texto | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-004](/design/acessibilidade#a-004) | Texto branco sobre verde não atinge contraste mínimo WCAG AA | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [A-005](/design/acessibilidade#a-005) | Fotos de perfil e banners usam imagens genéricas ou stock photos | Acessibilidade | Perfil · Banners | Média | 2025-03-16 |
+    | [A-006](/design/acessibilidade#a-006) | Imagens de cenários mostram situações encenadas ou artificiais | Acessibilidade | Banners · Onboarding | Média | 2025-03-16 |
+    | [B-001](/modulos/agenda#b-001) | Alteração de Data/Hora início e fim não reflete os valores digitados | Bug | Agenda | Alta | 2025-03-16 |
+    | [B-002](/modulos/agenda#b-002) | Evento não aparece no Google Calendar mesmo com conta conectada | Bug | Integrações | Alta | 2025-03-16 |
+    | [B-003](/modulos/cadastro#b-003) | Usuário convidado não é direcionado ao cadastro completo | Bug | Cadastro | Alta | 2025-03-16 |
+    | [B-005](/modulos/equipes#b-005) | Versão mobile não exibe acesso à seção de equipes | Bug | Equipes | Alta | 2025-03-16 |
+    | [B-006](/modulos/link-profissional#b-006) | Valores de serviços acima de R$ 99 quebram o layout no mobile | Bug | Link do Profissional | Média | 2025-03-16 |
+    | [B-007](/modulos/servicos#b-007) | Campo de duração do serviço não indica que o valor é em minutos | Bug | Serviços | Baixa | 2025-03-16 |
+    | [B-008](/modulos/qr-code#b-008) | QR code muito pequeno e imagem não abre corretamente no iPhone | Bug | QR Code | Média | 2025-03-16 |
+    | [B-009](/modulos/notificacoes#b-009) | Notificações sem detalhes do cliente, serviço ou horário | Bug | Notificações | Média | 2025-03-16 |
+    | [B-011](/modulos/clientes#b-011) | Detalhes do cliente não exibem mensagens enviadas | Bug | Clientes | Média | 2025-03-16 |
+    | [M-001](/design/melhorias#m-001) | Ícone de tesoura na agenda não é aplicável a todos os setores | Melhoria | Agenda | Baixa | 2025-03-16 |
+  </Tab>
+  <Tab title="Por Área">
+    | ID | Descrição | Categoria | Área | Prioridade | Data |
+    |----|-----------|-----------|------|------------|------|
+    | [M-001](/design/melhorias#m-001) | Ícone de tesoura na agenda não é aplicável a todos os setores | Melhoria | Agenda | Baixa | 2025-03-16 |
+    | [B-001](/modulos/agenda#b-001) | Alteração de Data/Hora início e fim não reflete os valores digitados | Bug | Agenda | Alta | 2025-03-16 |
+    | [A-006](/design/acessibilidade#a-006) | Imagens de cenários mostram situações encenadas ou artificiais | Acessibilidade | Banners · Onboarding | Média | 2025-03-16 |
+    | [B-003](/modulos/cadastro#b-003) | Usuário convidado não é direcionado ao cadastro completo | Bug | Cadastro | Alta | 2025-03-16 |
+    | [B-011](/modulos/clientes#b-011) | Detalhes do cliente não exibem mensagens enviadas | Bug | Clientes | Média | 2025-03-16 |
+    | [B-005](/modulos/equipes#b-005) | Versão mobile não exibe acesso à seção de equipes | Bug | Equipes | Alta | 2025-03-16 |
+    | [A-001](/design/acessibilidade#a-001) | Elementos de texto abaixo de 14px comprometem a legibilidade | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [A-002](/design/acessibilidade#a-002) | Bold aplicado de forma indiscriminada na interface | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-003](/design/acessibilidade#a-003) | Títulos sem proporção adequada em relação ao corpo do texto | Acessibilidade | Global | Média | 2025-03-16 |
+    | [A-004](/design/acessibilidade#a-004) | Texto branco sobre verde não atinge contraste mínimo WCAG AA | Acessibilidade | Global | Alta | 2025-03-16 |
+    | [B-002](/modulos/agenda#b-002) | Evento não aparece no Google Calendar mesmo com conta conectada | Bug | Integrações | Alta | 2025-03-16 |
+    | [B-006](/modulos/link-profissional#b-006) | Valores de serviços acima de R$ 99 quebram o layout no mobile | Bug | Link do Profissional | Média | 2025-03-16 |
+    | [B-009](/modulos/notificacoes#b-009) | Notificações sem detalhes do cliente, serviço ou horário | Bug | Notificações | Média | 2025-03-16 |
+    | [A-005](/design/acessibilidade#a-005) | Fotos de perfil e banners usam imagens genéricas ou stock photos | Acessibilidade | Perfil · Banners | Média | 2025-03-16 |
+    | [B-008](/modulos/qr-code#b-008) | QR code muito pequeno e imagem não abre corretamente no iPhone | Bug | QR Code | Média | 2025-03-16 |
+    | [B-007](/modulos/servicos#b-007) | Campo de duração do serviço não indica que o valor é em minutos | Bug | Serviços | Baixa | 2025-03-16 |
+  </Tab>
+</Tabs>
 
 ## Em Andamento
 
-<StatusTable status="Em Andamento" />
+| ID | Descrição | Categoria | Área | Prioridade | Data |
+|----|-----------|-----------|------|------------|------|
+| — | — | — | — | — | — |
 
 ## Resolvido
 
-<StatusTable status="Resolvido" />
+| ID | Descrição | Categoria | Área | Prioridade | Resolvido em |
+|----|-----------|-----------|------|------------|--------------|
+| — | — | — | — | — | — |
 
 ---
 
