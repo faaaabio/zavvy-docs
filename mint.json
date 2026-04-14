@@ -14,26 +14,26 @@
     "name": "Acessar Site",
     "url": "https://zavvy.com.br"
   },
-  "anchors": [
+  "tabs": [
     {
-      "name": "Docs",
-      "icon": "book-open",
-      "url": "/"
+      "name": "Interface Principal",
+      "url": "docs"
     },
     {
-      "name": "Nova Aba",
-      "icon": "folder-plus",
-      "url": "/nova-aba"
+      "name": "Ads",
+      "url": "ads"
     }
   ],
   "navigation": [
     {
+      "tab": "ads",
       "group": "Visão Geral e Planejamento",
       "pages": [
         "plano/plano-marketing-zavvy-completo"
       ]
     },
     {
+      "tab": "ads",
       "group": "Conteúdo e Redes Sociais",
       "pages": [
         "plano/calendario-instagram-zavvy",
@@ -41,6 +41,7 @@
       ]
     },
     {
+      "tab": "ads",
       "group": "Documentação Interna",
       "pages": [
         "docs/novos-cenarios",
