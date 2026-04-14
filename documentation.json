@@ -53,6 +53,15 @@
                 "path": "docs/referencia-visual"
               }
             ]
+          },
+          {
+            "group": "Mídia",
+            "pages": [
+              {
+                "title": "Vídeos e Imagens",
+                "path": "plano/midia"
+              }
+            ]
           }
         ]
       },
