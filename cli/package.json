@@ -1,0 +1,15 @@
+{
+  "name": "zavvy-video-cli",
+  "version": "1.0.0",
+  "description": "CLI para geração de vídeos Zavvy via Seedance 2.0 (fal.ai)",
+  "type": "module",
+  "main": "gerar-video.js",
+  "scripts": {
+    "gerar": "node gerar-video.js"
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.9.5",
+    "@google/genai": "^1.50.0",
+    "replicate": "^1.4.0"
+  }
+}

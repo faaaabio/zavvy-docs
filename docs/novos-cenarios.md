@@ -1,11 +1,12 @@
-# Prompts de Vídeo — Calendário de Conteúdo
+# Prompts de Vídeo — Calendário Instagram Zavvy
 
-Prompts organizados por data de publicação conforme o calendário do Instagram.
-**Referência visual:** [referencia-visual.md](referencia-visual.md) · **Bloco BASE** deve ser colado antes de cada prompt.
+Prompts organizados por data de publicação. Cada entrada contém legenda, hashtags e
+horário exatos conforme o calendário.
+**Referência visual:** [referencia-visual.md](referencia-visual.md)
 
 ---
 
-## Bloco BASE — cole sempre no início
+## Bloco BASE — cole sempre no início do prompt
 
 ```
 Pessoa vestida inteiramente com morphsuit verde vivo, cobrindo todo o corpo incluindo
@@ -21,35 +22,43 @@ minimalista estilo Apple, visual ultra premium, sombras suaves, look cinematogr�
 
 ## Semana 1
 
-### 16/04 (Quarta) — Produto em ação · Reel 30s
-**Tema:** IA respondendo lead em tempo real
-**Legenda:** "Sua empresa atendendo em 3 segundos. Sem você precisar digitar nada. Salva pra mostrar pro seu sócio."
-**Proporção:** 9:16
-**Status:** ✅ Gerado — `videos/freepik_...52164.mp4`
+### 16/04 — Quarta · Produto em ação · Reel 30s · 14h
 
-> Usar vídeo V2 já gerado. Adicionar legenda e hashtags conforme calendário.
+**Tema:** IA respondendo lead em tempo real
+**Legenda:**
+> Sua empresa atendendo em 3 segundos. Sem você precisar digitar nada. Salva pra mostrar pro seu sócio.
+
+**Hashtags:** `#whatsappbusiness #inteligenciaartificial #atendimentoautomatico #automacao #zavvy`
+
+**Status:** ✅ Gerado — `videos/freepik_...52164.mp4`
+> Usar vídeo V2 já gerado. Adicionar legenda e hashtags.
 
 ---
 
 ## Semana 2
 
-### 22/04 (Terça) — Dor do dono · Reel 20s
-**Tema:** Celular com 47 mensagens não lidas no WhatsApp
-**Legenda:** "Seu WhatsApp tem 47 mensagens. Quantas dessas eram venda? Com a Zavvy, nenhuma fica sem resposta."
-**Proporção:** 9:16
+### 22/04 — Terça · Dor do dono · Reel 20s · 9h
 
+**Tema:** Celular com 47 mensagens não lidas
+**Legenda:**
+> Seu WhatsApp tem 47 mensagens. Quantas dessas eram venda? Com a Zavvy, nenhuma fica sem resposta.
+
+**Hashtags:** `#whatsappbusiness #vendaspelozap #empreendedorismo #iaparaempresas #zavvy`
+
+**Prompt:**
 ```
-[CENA]
+[BASE +]
+
 Cena noturna, quarto moderno e clean, homem de camiseta branca dormindo tranquilamente
 na cama. Mesinha ao lado com smartphone mostrando notificações acumuladas — ícone do
-WhatsApp com número alto de mensagens não lidas brilhando na tela.
+WhatsApp com número alto de mensagens não lidas brilhando na tela escura.
 
 Pessoa vestida inteiramente com morphsuit verde vivo (#00C840), cobertura total do
 corpo, aparece ao lado da cama segurando o celular. Responde mensagem por mensagem
 com movimentos calmos e deliberados. O dono continua dormindo.
 
 Close-up: tela do celular mostrando conversa de WhatsApp, respostas sendo enviadas
-uma a uma. Balões verdes aparecendo.
+uma a uma. Contador de mensagens caindo até zero.
 
 Plano final: tela do celular mostra zero mensagens não lidas. Personagem verde ainda
 de pé, quarto ainda escuro.
@@ -58,119 +67,141 @@ Texto na tela (branco, centralizado, sans-serif):
 "Nenhuma mensagem sem resposta."
 
 Estética minimalista, iluminação noturna azul suave, profundidade de campo rasa.
+Proporção 9:16, formato vertical, 20 segundos.
 ```
 
 ---
 
-### 26/04 (Sábado) — Prova social · Reel 30s
+### 26/04 — Sábado · Prova social · Reel 30s · 10h
+
 **Tema:** Antes vs depois do atendimento
-**Legenda:** "Antes: 3 horas pra responder. Depois: 3 segundos. Essa é a diferença da Zavvy. Link na bio."
-**Proporção:** 16:9 ou 9:16
+**Legenda:**
+> Antes: 3 horas pra responder. Depois: 3 segundos. Essa é a diferença da Zavvy. Link na bio.
 
+**Hashtags:** `#iaparaempresas #resultados #inteligenciaartificial #vendaspelozap #zavvy`
+
+**Prompt:**
 ```
-[CENA]
+[BASE +]
+
 Tela dividida verticalmente — lado esquerdo escuro e caótico (notificações acumuladas,
-mensagens sem resposta, cliente esperando), lado direito limpo e iluminado (personagem
-verde respondendo na hora, cliente satisfeito).
+mensagens sem resposta), lado direito limpo e iluminado (personagem verde respondendo
+na hora).
 
-À esquerda: dono olhando para o celular cheio de notificações, expressão preocupada,
-ambiente escuro.
+À esquerda: smartphone cheio de notificações do WhatsApp empilhadas, sem resposta,
+cliente esperando. Ambiente escuro.
 
-À direita: personagem verde vivo (#00C840) de pé, segurando smartphone, respondendo
-mensagens com calma. Ambiente de quarto de hotel premium, luz quente do amanhecer.
+À direita: pessoa vestida inteiramente com morphsuit verde vivo (#00C840) de pé,
+segurando smartphone, respondendo mensagens com calma. Quarto de hotel premium,
+luz quente do amanhecer pela janela.
 
 Câmera desliza da esquerda para a direita. Texto aparece em cada lado:
-Esquerda: "Antes" — Direita: "Depois"
+"Antes" (esquerda) — "Depois" (direita).
 
-Plano final: apenas o lado direito em tela cheia — personagem verde, quarto luminoso.
+Plano final: apenas o lado direito em tela cheia — personagem verde, ambiente luminoso.
 
 Texto na tela (branco, Apple-style):
 "3 horas → 3 segundos."
 
-Estética cinematográfica, contraste visual forte, profundidade de campo rasa.
+Contraste visual forte, profundidade de campo rasa, look cinematográfico.
+Proporção 16:9, 30 segundos.
 ```
 
 ---
 
 ## Semana 3
 
-### 30/04 (Quarta) — Produto em ação · Reel 30s
-**Tema:** Demo — IA qualificando lead no WhatsApp
-**Legenda:** "A Zavvy não só responde — ela pergunta o que o cliente precisa, qualifica e te avisa quando tá quente."
-**Proporção:** 9:16
+### 30/04 — Quarta · Produto em ação · Reel 30s · 14h
 
+**Tema:** Demo — IA qualificando lead no WhatsApp
+**Legenda:**
+> A Zavvy não só responde — ela pergunta o que o cliente precisa, qualifica e te avisa quando tá quente.
+
+**Hashtags:** `#whatsappbusiness #inteligenciaartificial #atendimentoautomatico #iaparaempresas #zavvy`
+
+**Prompt:**
 ```
-[CENA]
+[BASE +]
+
 Academia moderna e premium, início da manhã, iluminação ambiente suave. Um homem
 com roupas esportivas levanta peso concentrado no treino.
 
-Ao lado dele, pessoa vestida inteiramente com morphsuit verde vivo está de pé com
-calma, segurando um smartphone, respondendo mensagens de clientes enquanto o dono
-treina. O personagem verde está imóvel e composto — apenas as mãos se movem no celular.
+Ao lado dele, pessoa vestida inteiramente com morphsuit verde vivo (#00C840) está de
+pé com calma, segurando smartphone, respondendo mensagens de clientes enquanto o
+dono treina. Apenas as mãos se movem no celular.
 
-Close-up da tela do celular: conversa de WhatsApp com qualificação em andamento —
-perguntas e respostas fluindo, lead sendo direcionado.
+Close-up da tela: conversa de WhatsApp com qualificação em andamento — perguntas e
+respostas fluindo, lead sendo direcionado. Balões azuis de resposta aparecendo.
 
-Plano final aberto: dono termina sua série, enxuga o suor, completamente alheio.
+Plano final aberto: dono termina sua série, completamente alheio.
 Personagem verde continua trabalhando.
 
 Texto na tela (branco, clean sans-serif):
 "Você foca no que importa."
 
 Estética de academia premium, iluminação azul-acinzentada fria, profundidade de
-campo rasa, look cinematográfico.
+campo rasa. Proporção 9:16, 30 segundos.
 ```
 
 ---
 
 ## Semana 4
 
-### 07/05 (Quarta) — Dor do dono · Reel 20s
-**Tema:** Tempo de resposta — quanto você demora?
-**Legenda:** "A maioria demora horas. Seu concorrente que responde em minutos leva o cliente. A Zavvy resolve isso."
-**Proporção:** 9:16
+### 07/05 — Quarta · Dor do dono · Reel 20s · 14h
 
+**Tema:** Enquete — quanto tempo você demora pra responder um lead?
+**Legenda:**
+> A maioria demora horas. Seu concorrente que responde em minutos leva o cliente. A Zavvy resolve isso.
+
+**Hashtags:** `#whatsappbusiness #iaparaempresas #atendimentointeligente #vendaspelozap #zavvy`
+
+**Prompt:**
 ```
-[CENA]
+[BASE +]
+
 Restaurante moderno e elegante, iluminação baixa, ambiente aconchegante com luz de
-vela. Um homem está sentado à mesa do jantar, relaxado, jantando com amigos.
+vela. Um homem está sentado à mesa do jantar, relaxado, jantando.
 
 Ao fundo, levemente desfocado, pessoa vestida inteiramente com morphsuit verde vivo
-está de pé discretamente perto da parede, segurando smartphone, respondendo mensagens
-com calma. O dono não percebe.
+(#00C840) está de pé discretamente perto da parede, segurando smartphone, respondendo
+mensagens com calma. O dono não percebe.
 
-Close-up das mãos verdes digitando na tela. Balões de conversa aparecendo —
-respostas enviadas instantaneamente enquanto o dono está ocupado jantando.
+Close-up das mãos verdes digitando na tela. Respostas enviadas instantaneamente
+enquanto o dono está ocupado jantando.
 
-Plano final aberto: dono continua sua refeição, personagem verde trabalha em silêncio
-ao fundo. Relógio na parede mostra 21h.
+Plano final: dono continua sua refeição, personagem verde trabalha em silêncio
+ao fundo.
 
 Texto na tela (branco, Apple-style):
 "Seu atendimento não para. Nem quando você para."
 
-Iluminação quente e cinematográfica, estética de restaurante premium, profundidade
-de campo rasa.
+Iluminação quente e cinematográfica, restaurante premium, profundidade de campo rasa.
+Proporção 9:16, 20 segundos.
 ```
 
 ---
 
-### 08/05 (Quinta) — Produto em ação · Reel 30s
-**Tema:** Tour pelo dashboard — métricas da manhã
-**Legenda:** "Você abre o celular e já sabe: quantos leads novos, quem tá quente, quem precisa de atenção. Sem bagunça."
-**Proporção:** 16:9 ou 9:16
+### 08/05 — Quinta · Produto em ação · Reel 30s · 9h
 
+**Tema:** Tour pelo dashboard — métricas que o dono vê de manhã
+**Legenda:**
+> Você abre o celular e já sabe: quantos leads novos, quem tá quente, quem precisa de atenção. Sem bagunça.
+
+**Hashtags:** `#inteligenciaartificial #atendimentoautomatico #automacao #marketingdigital #zavvy`
+
+**Prompt:**
 ```
-[CENA]
-Interior de cabine de avião premium ou sala VIP de aeroporto, iluminação suave e
-quente. Um homem reclinado na poltrona da classe executiva, relaxado, olhando pela
-janela.
+[BASE +]
 
-Pessoa vestida inteiramente com morphsuit verde vivo está sentada discretamente ao
-lado ou de pé no corredor, segurando um smartphone, respondendo mensagens com calma.
-A tela do celular brilha suavemente.
+Interior de cabine de avião premium, iluminação suave e quente da cabine. Um homem
+reclinado na poltrona da classe executiva, relaxado, olhando pela janela.
+
+Pessoa vestida inteiramente com morphsuit verde vivo (#00C840) sentada discretamente
+ao lado, segurando smartphone, respondendo mensagens com calma. Tela do celular
+brilha suavemente na penumbra.
 
 Close-up: mãos verdes navegando por dashboard com métricas — leads novos, conversas
-ativas, notificações organizadas. Tudo em ordem.
+ativas, notificações organizadas. Números em ordem.
 
 Plano aberto: passageiro descansando, personagem verde trabalhando em silêncio.
 Janela mostra nuvens lá fora.
@@ -179,23 +210,30 @@ Texto na tela (branco, Apple-style):
 "Mesmo a 10 mil metros. Sua empresa atende."
 
 Estética de cabine premium, luz quente suave, profundidade de campo rasa.
+Proporção 16:9, 30 segundos.
 ```
 
 ---
 
-### 10/05 (Sábado) — Prova social · Reel 45s
+### 10/05 — Sábado · Prova social · Reel 45s · 10h
+
 **Tema:** Compilação — 3 resultados de clientes
-**Legenda:** "3 negócios, 3 resultados. Todos começaram com um teste grátis. Link na bio."
-**Proporção:** 9:16
+**Legenda:**
+> 3 negócios, 3 resultados. Todos começaram com um teste grátis. Link na bio.
 
+**Hashtags:** `#iaparaempresas #resultados #whatsappbusiness #secretariavirtual #zavvy`
+
+**Prompt:**
 ```
-[CENA]
-Quintal ao ar livre ou terraço, golden hour. Um homem ri e conversa com amigos ao
-redor de uma mesa. Atmosfera relaxada. Luz ambiente quente, varal de luzes ao fundo.
+[BASE +]
 
-Um pouco afastado, pessoa vestida inteiramente com morphsuit verde vivo está de pé
-perto de uma parede, segurando smartphone com calma, respondendo mensagens. Ninguém
-repara. O personagem é tranquilo e deliberado — sem pressa.
+Quintal ao ar livre ou terraço, golden hour. Um homem ri e conversa com amigos ao
+redor de uma mesa. Atmosfera relaxada e social. Luz ambiente quente, varal de luzes
+ao fundo.
+
+Um pouco afastado, pessoa vestida inteiramente com morphsuit verde vivo (#00C840)
+está de pé perto de uma parede, segurando smartphone com calma, respondendo mensagens.
+Ninguém repara. Movimentos tranquilos e deliberados — sem pressa.
 
 Close-up da tela: número crescente de conversas respondidas. Contador subindo.
 
@@ -206,18 +244,19 @@ Texto na tela (branco, clean sans-serif):
 "Você presente. Seu negócio também."
 
 Iluminação golden hour quente, fundo em bokeh, look cinematográfico, lifestyle premium.
+Proporção 9:16, 45 segundos.
 ```
 
 ---
 
-## Resumo do Calendário de Vídeos
+## Resumo
 
-| Data | Pilar | Cenário | Proporção | Status |
-|------|-------|---------|-----------|--------|
-| 16/04 | Produto em ação | Quarto — noite (V2) | 9:16 | ✅ Gerado |
-| 22/04 | Dor do dono | Quarto — mensagens acumuladas | 9:16 | ⏳ Pendente |
-| 26/04 | Prova social | Antes vs depois | 16:9 | ⏳ Pendente |
-| 30/04 | Produto em ação | Academia | 9:16 | ⏳ Pendente |
-| 07/05 | Dor do dono | Restaurante | 9:16 | ⏳ Pendente |
-| 08/05 | Produto em ação | Aeroporto / dashboard | 16:9 | ⏳ Pendente |
-| 10/05 | Prova social | Churrasco / compilação | 9:16 | ⏳ Pendente |
+| Data | Dia | Pilar | Formato | Horário | Status |
+|------|-----|-------|---------|---------|--------|
+| 16/04 | Quarta | Produto em ação | Reel 30s | 14h | ✅ Gerado |
+| 22/04 | Terça | Dor do dono | Reel 20s | 9h | ⏳ Pendente |
+| 26/04 | Sábado | Prova social | Reel 30s | 10h | ⏳ Pendente |
+| 30/04 | Quarta | Produto em ação | Reel 30s | 14h | ⏳ Pendente |
+| 07/05 | Quarta | Dor do dono | Reel 20s | 14h | ⏳ Pendente |
+| 08/05 | Quinta | Produto em ação | Reel 30s | 9h | ⏳ Pendente |
+| 10/05 | Sábado | Prova social | Reel 45s | 10h | ⏳ Pendente |
