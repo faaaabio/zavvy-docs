@@ -37,6 +37,10 @@
               {
                 "title": "Novos Cenários",
                 "path": "docs/novos-cenarios"
+              },
+              {
+                "title": "API Freepik — Seedance",
+                "path": "docs/freepik-api"
               }
             ]
           }
