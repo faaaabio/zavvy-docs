@@ -51,11 +51,11 @@
             "pages": [
               {
                 "title": "Imagem realista",
-                "path": "docs/gerar-imagem-com-ia"
+                "path": "docs/imagem-realista"
               },
               {
                 "title": "Animação gráfica",
-                "path": "docs/remotion"
+                "path": "docs/animacao-grafica"
               }
             ]
           }
