@@ -50,11 +50,11 @@
             "group": "Ferramentas",
             "pages": [
               {
-                "title": "Gerar imagem com IA",
+                "title": "Imagem realista",
                 "path": "docs/gerar-imagem-com-ia"
               },
               {
-                "title": "Remotion",
+                "title": "Animação gráfica",
                 "path": "docs/remotion"
               }
             ]
