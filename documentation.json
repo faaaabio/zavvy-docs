@@ -39,8 +39,114 @@
                 "path": "docs/novos-cenarios"
               },
               {
-                "title": "API Freepik — Seedance",
-                "path": "docs/freepik-api"
+                "title": "Gerar imagem com IA",
+                "path": "docs/gerar-imagem-com-ia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Review",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Visão Geral",
+            "icon": "home",
+            "pages": [
+              {
+                "title": "Status",
+                "path": "status"
+              }
+            ]
+          },
+          {
+            "group": "Reviews Realizadas",
+            "icon": "magnifying-glass",
+            "pages": [
+              {
+                "title": "QA - 23 abr",
+                "path": "review/qa-23-abr"
+              }
+            ]
+          },
+          {
+            "group": "Módulos",
+            "icon": "bug",
+            "pages": [
+              {
+                "title": "Agenda",
+                "path": "modulos/agenda"
+              },
+              {
+                "title": "Cadastro",
+                "path": "modulos/cadastro"
+              },
+              {
+                "title": "Equipes",
+                "path": "modulos/equipes"
+              },
+              {
+                "title": "Link do Profissional",
+                "path": "modulos/link-profissional"
+              },
+              {
+                "title": "Serviços",
+                "path": "modulos/servicos"
+              },
+              {
+                "title": "QR Code",
+                "path": "modulos/qr-code"
+              },
+              {
+                "title": "Notificações",
+                "path": "modulos/notificacoes"
+              },
+              {
+                "title": "Clientes",
+                "path": "modulos/clientes"
+              }
+            ]
+          },
+          {
+            "group": "Global",
+            "icon": "globe",
+            "pages": [
+              {
+                "title": "Tipografia",
+                "path": "global/tipografia"
+              },
+              {
+                "title": "Contraste",
+                "path": "global/contraste"
+              },
+              {
+                "title": "Imagens",
+                "path": "global/imagens"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog / Vídeos",
+        "icon": "clock-rotate-left",
+        "groups": [
+          {
+            "group": "Changelog",
+            "pages": [
+              {
+                "title": "Atualizações",
+                "path": "changelog/index"
+              }
+            ]
+          },
+          {
+            "group": "Vídeos",
+            "pages": [
+              {
+                "title": "Demonstrações",
+                "path": "videos/index"
               }
             ]
           }
