@@ -51,22 +51,36 @@
         "icon": "book",
         "groups": [
           {
-            "group": "Visão Geral",
-            "icon": "home",
-            "pages": [
-              {
-                "title": "Status",
-                "path": "status"
-              }
-            ]
-          },
-          {
-            "group": "Reviews Realizadas",
+            "group": "QA - 23 abr",
             "icon": "magnifying-glass",
             "pages": [
               {
-                "title": "QA - 23 abr",
+                "title": "Resumo",
                 "path": "review/qa-23-abr"
+              },
+              {
+                "title": "QA-001 — Lentidão na landing",
+                "path": "review/qa-001"
+              },
+              {
+                "title": "QA-002 — Dashboard",
+                "path": "review/qa-002"
+              },
+              {
+                "title": "QA-003 — Cfg assistente",
+                "path": "review/qa-003"
+              },
+              {
+                "title": "QA-004 — Salvar sobre negócio",
+                "path": "review/qa-004"
+              },
+              {
+                "title": "QA-005 — Feedback da IA",
+                "path": "review/qa-005"
+              },
+              {
+                "title": "QA-006 — Voltar ao dashboard",
+                "path": "review/qa-006"
               }
             ]
           }
