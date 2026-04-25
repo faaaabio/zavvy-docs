@@ -51,15 +51,15 @@
             "group": "Ferramentas",
             "pages": [
               {
-                "title": "Imagem realista",
+                "title": "Seedream 4.5",
                 "path": "docs/imagem-realista"
               },
               {
-                "title": "Animação gráfica",
+                "title": "Remotion",
                 "path": "docs/animacao-grafica"
               },
               {
-                "title": "Cenas de cinema",
+                "title": "Seedance 2.0",
                 "path": "docs/imagens-cinematograficas"
               }
             ]
