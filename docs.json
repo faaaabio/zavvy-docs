@@ -42,6 +42,10 @@
               {
                 "title": "Gerar imagem com IA",
                 "path": "docs/gerar-imagem-com-ia"
+              },
+              {
+                "title": "Remotion",
+                "path": "docs/remotion"
               }
             ]
           }
