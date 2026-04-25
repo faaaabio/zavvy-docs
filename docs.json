@@ -57,6 +57,10 @@
               {
                 "title": "Animação gráfica",
                 "path": "docs/animacao-grafica"
+              },
+              {
+                "title": "Imagens cinematográficas",
+                "path": "docs/imagens-cinematograficas"
               }
             ]
           }
