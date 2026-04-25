@@ -39,6 +39,17 @@
                 "title": "Novos Cenários",
                 "path": "docs/novos-cenarios"
               },
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "IA",
+        "icon": "robot",
+        "groups": [
+          {
+            "group": "Ferramentas",
+            "pages": [
               {
                 "title": "Gerar imagem com IA",
                 "path": "docs/gerar-imagem-com-ia"
